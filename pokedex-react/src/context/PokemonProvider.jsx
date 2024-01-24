@@ -56,12 +56,12 @@ export const PokedemonProvider = ({ children }) => {
         setloading(false)
     }
 
-    //POkemon for Id
+    //Pokemon for Id
 
 
     const getAllPokemonById = async (id) => {
         const baseURL = 'https://pokeapi.co/api/v2/';
-        const res = await fetch(`${baseUrl}pokemon/&{id}`);
+        const res = await fetch(`${baseURL}pokemon/${id}`);
         const data = await res.json();
         return data;
     }
@@ -69,9 +69,8 @@ export const PokedemonProvider = ({ children }) => {
 
     useEffect(() => {
         getAllPokemon()
-
     }, [])
-
+    
     useEffect(() => {
         getGlobalPOkemons()
     }, [])
@@ -85,7 +84,8 @@ export const PokedemonProvider = ({ children }) => {
             onResetForm, 
             allPokemons, 
             globalPokemons,
-            getAllPokemonById
+            // Cambia el nombre de la función aquí
+            getPokemonByID: getAllPokemonById
         }}>
             {children}
         </PokemonContext.Provider>
