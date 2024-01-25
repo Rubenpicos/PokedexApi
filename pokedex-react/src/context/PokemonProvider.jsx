@@ -17,7 +17,7 @@ export const PokedemonProvider = ({ children }) => {
 
     // Simple states for the app
     const [loading, setloading] = useState(true)
-    const [active, setactive] = useState(false)
+    const [active, setActive] = useState(false)
 
     //50th first Pokemon
     const getAllPokemon = async (limit = 50) => {
@@ -69,11 +69,64 @@ export const PokedemonProvider = ({ children }) => {
 
     useEffect(() => {
         getAllPokemon()
-    }, [])
+    }, [offset])
     
     useEffect(() => {
         getGlobalPOkemons()
     }, [])
+
+    //Button more pokemons
+
+    const onClickLoadMore = () =>{
+        setOffset(offset + 50)
+    }
+
+    //Filter and state
+
+    const [typeSelected, setTypeSelected] =  useState ({
+        grass: false,
+		normal: false,
+		fighting: false,
+		flying: false,
+		poison: false,
+		ground: false,
+		rock: false,
+		bug: false,
+		ghost: false,
+		steel: false,
+		fire: false,
+		water: false,
+		electric: false,
+		psychic: false,
+		ice: false,
+		dragon: false,
+		dark: false,
+		fairy: false,
+		unknow: false,
+		shadow: false,
+    })
+
+     const [ filteredPokemons, setfilteredPokemons] = useState([])
+
+    const handleCheckbox = e => {
+
+        setTypeSelected ({
+            ...typeSelected, 
+            [e.target.name]: e.target.checked
+        })
+
+
+        if(e.target.checked){
+            const filteredResults = globalPokemons.filter(pokemon => 
+                pokemon.types.map(type => type.type.name).includes(e.target.name)
+
+            )
+            console.log(filteredResults)
+        }
+
+    }
+
+
 
 
 
@@ -84,8 +137,19 @@ export const PokedemonProvider = ({ children }) => {
             onResetForm, 
             allPokemons, 
             globalPokemons,
-            // Cambia el nombre de la función aquí
-            getPokemonByID: getAllPokemonById
+            onClickLoadMore,
+            getPokemonByID: getAllPokemonById,
+            //Loader
+            loading, 
+            setloading, 
+            //Button filter
+            active, 
+            setActive,
+            //Filter container
+            handleCheckbox, 
+            filteredPokemons
+
+
         }}>
             {children}
         </PokemonContext.Provider>
