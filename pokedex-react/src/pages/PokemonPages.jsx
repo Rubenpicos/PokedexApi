@@ -21,7 +21,7 @@ export const PokemonPage = () => {
   useEffect(() => {
     fetchPokemon(id);
   }, []);
-
+  //Individual cards of each pokemon and their content//Cartas individuales de cada pokemon y su contenido.
   return (
     <main className="container main-pokemon">
       {loading ? (

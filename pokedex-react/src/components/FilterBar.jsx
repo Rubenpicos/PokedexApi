@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { PokemonContext } from "../context/pokemonContext";
 
+//Const to type filter// Constante para el filtro de tipos 
 export const FilterBar = () => {
   const { active, handleCheckbox } = useContext(PokemonContext);
 

@@ -5,7 +5,7 @@ import { PokemonContext } from "../context/pokemonContext";
 
 export const HomePage = () => {
   const { onClickLoadMore, active, setActive } = useContext(PokemonContext);
-
+  //Basic structure// Estructura básica
   return (
     <>
       <div className="container-filter container">

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { PokemonContext } from "../context/pokemonContext";
-
-// ... (importaciones y código anterior)
-
+//For the navigator bar and results/  Constante para funcionamiento de la barra de navegación y sus resultados.
 export const Navigation = () => {
   const { onInputChange, valueSearch, onResetForm } =
     useContext(PokemonContext);

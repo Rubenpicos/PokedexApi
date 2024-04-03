@@ -7,16 +7,16 @@ export const PokedemonProvider = ({ children }) => {
   const [globalPokemons, setGlobalPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
 
-  // Utilizar CustomHook - useForm
+  
   const { valueSearch, onInputChange, onResetForm } = useForm({
     valueSearch: "",
   });
 
-  // Estados para la aplicación simples
+  // Basic states fo the app // Estados para la aplicación simples
   const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
 
-  // lLamar 50 pokemones a la API
+  //Call the first 50 pokemon to the API  //Llamar 50 pokemon a la API
   const getAllPokemons = async (limit = 50) => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -36,7 +36,7 @@ export const PokedemonProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // Llamar todos los pokemones
+  // Call all pokemon// Llamar todos los pokemon
   const getGlobalPokemons = async () => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -54,7 +54,7 @@ export const PokedemonProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // Llamar a un pokemon por ID
+  // Call pokemon for id// Llamar a un pokemon por ID
   const getPokemonByID = async (id) => {
     const baseURL = "https://pokeapi.co/api/v2/";
 
@@ -71,12 +71,12 @@ export const PokedemonProvider = ({ children }) => {
     getGlobalPokemons();
   }, []);
 
-  // BTN CARGAR MÁS
+  // Button for load more pokemon// Botón para cargar más pokemon
   const onClickLoadMore = () => {
     setOffset(offset + 50);
   };
 
-  // Filter Function + State
+  // Filter Function + State // Función para los diferentes filtros.
   const [typeSelected, setTypeSelected] = useState({
     grass: false,
     normal: false,
@@ -99,7 +99,7 @@ export const PokedemonProvider = ({ children }) => {
     unknow: false,
     shadow: false,
   });
-
+ //Const and state for the filter// Contanstes y estados para el filtro de la app
   const [filteredPokemons, setfilteredPokemons] = useState([]);
 
   const handleCheckbox = (e) => {

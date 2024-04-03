@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+// The const to individual card in the API// Constante para cada carta individual de la API
 export const CardPokemon = ({ pokemon }) => {
   return (
+
+    //The route and the structure/ La ruta y la estructura. 
     <Link to={`/pokemon/${pokemon.id}`} className="card-pokemon">
       <div className="card-img">
         <img

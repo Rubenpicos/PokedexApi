@@ -6,16 +6,13 @@ import { CardPokemon } from "../components";
 export const SeachPage = () => {
   const location = useLocation();
 
-  console.log(location);
-
   const { globalPokemons } = useContext(PokemonContext);
 
   const filteredPokemons = globalPokemons.filter((pokemon) =>
     pokemon.name.includes(location.state.toLowerCase()),
   );
 
-  console.log(filteredPokemons);
-
+  //The search results// Los resultados de las búsquedas.
   return (
     <div className="container">
       <p className="p-search">

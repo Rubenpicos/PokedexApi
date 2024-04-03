@@ -1,5 +1,5 @@
 import { squircle } from "ldrs";
-
+//The loader styles&// Los estilosde la "pantalla" de carga.
 export const Loaders = () => {
   squircle.register();
 
