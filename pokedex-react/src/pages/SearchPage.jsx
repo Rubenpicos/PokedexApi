@@ -19,7 +19,7 @@ export const SeachPage = () => {
   return (
     <div className="container">
       <p className="p-search">
-        Se encontraro <span>{filteredPokemons.length}</span> resultados:
+        <span>{filteredPokemons.length}</span> Results were found:
       </p>
       <div className="card-list-pokemon container">
         {filteredPokemons.map((pokemon) => (

@@ -295,11 +295,7 @@ header form {
   cursor: pointer;
 }
 
-/* 
-======================================= 
-Styles of Pokemon Single Page
-======================================= 
-*/
+/* Styles of Pokemon Single Page*/
 
 .main-pokemon {
   display: flex;
@@ -445,4 +441,9 @@ Styles of Pokemon Single Page
 .btn-load-more:hover {
   background-color: var(--color-primary-hover);
   color: #000;
+}
+
+h3,
+span {
+  text-transform: capitalize;
 }

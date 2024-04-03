@@ -46,12 +46,12 @@ export const Navigation = () => {
               id=""
               value={valueSearch}
               onChange={onInputChange}
-              placeholder="Buscar nombre de Pokemon"
+              placeholder="Search pokemon name"
             />
           </div>
 
           <button type="submit" className="btn-search">
-            Buscar
+            Search
           </button>
         </form>
       </header>
